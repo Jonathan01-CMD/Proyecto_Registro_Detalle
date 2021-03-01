@@ -18,6 +18,8 @@ namespace Proyecto_Registro.BLL
                 return Insertar(roles);
             else
                 return Modificar(roles);
+
+            
         }
 
         private static bool Insertar(Roles roles)

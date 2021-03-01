@@ -14,7 +14,7 @@ namespace Proyecto_Registro.Entidades
         public string Nombres { get; set; }
         public string Email { get; set; }
         public DateTime FechaIngreso { get; set; } = DateTime.Now;
-        public int RolID { get; set; }
+        public string RolID { get; set; }
         public string Alias { get; set; }
         public bool Activo { get; set; }
 
