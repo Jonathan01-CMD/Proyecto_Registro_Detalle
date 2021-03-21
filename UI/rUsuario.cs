@@ -50,7 +50,6 @@ namespace WindowsFormsApp1
             NombreTextBox.Text = usuarios.Nombres;
             EmailTextBox.Text = usuarios.Email;
             AliasTextBox.Text = usuarios.Alias;
-            RolComboBox.Text = usuarios.RolID;
             ClaveTextBox.Text = usuarios.Clave;
             FechaDateTimePicker.Value = usuarios.FechaIngreso;
             ActivoCheckBox.Checked = usuarios.Activo;
@@ -65,7 +64,6 @@ namespace WindowsFormsApp1
             usuarios.Nombres = NombreTextBox.Text;
             usuarios.FechaIngreso = FechaDateTimePicker.Value;
             usuarios.Alias = AliasTextBox.Text;
-            usuarios.RolID = RolComboBox.Text;
             usuarios.Activo = ActivoCheckBox.Checked;
 
             return usuarios;

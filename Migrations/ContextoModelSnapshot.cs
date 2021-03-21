@@ -25,7 +25,13 @@ namespace Proyecto_Registro.Migrations
                     b.Property<string>("DetallePermiso")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Nombre")
+                        .HasColumnType("TEXT");
+
                     b.Property<int?>("PermisosId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("vecesAcignada")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("PermisoId");
@@ -38,17 +44,20 @@ namespace Proyecto_Registro.Migrations
                         new
                         {
                             PermisoId = 1,
-                            DetallePermiso = "Descuento"
+                            DetallePermiso = "Descuento",
+                            vecesAcignada = false
                         },
                         new
                         {
                             PermisoId = 2,
-                            DetallePermiso = "Venta"
+                            DetallePermiso = "Venta",
+                            vecesAcignada = false
                         },
                         new
                         {
                             PermisoId = 3,
-                            DetallePermiso = "Cobrar"
+                            DetallePermiso = "Cobrar",
+                            vecesAcignada = false
                         });
                 });
 
@@ -59,6 +68,9 @@ namespace Proyecto_Registro.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Descripcion")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("esActivo")
@@ -115,12 +127,7 @@ namespace Proyecto_Registro.Migrations
                     b.Property<string>("Nombres")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("RolID")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("UsuarioID");
-
-                    b.HasIndex("RolID");
 
                     b.ToTable("Usuarios");
                 });
@@ -141,17 +148,6 @@ namespace Proyecto_Registro.Migrations
                         .HasForeignKey("RolID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Proyecto_Registro.Entidades.Usuarios", b =>
-                {
-                    b.HasOne("Proyecto_Registro.Entidades.Roles", "Rol")
-                        .WithMany()
-                        .HasForeignKey("RolID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Rol");
                 });
 
             modelBuilder.Entity("Proyecto_Registro.Entidades.Roles", b =>

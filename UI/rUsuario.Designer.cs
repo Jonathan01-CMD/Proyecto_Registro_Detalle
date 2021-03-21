@@ -88,7 +88,6 @@ namespace WindowsFormsApp1
             // RolComboBox
             // 
             this.RolComboBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RolComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RolComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RolComboBox.FormattingEnabled = true;
             this.RolComboBox.Items.AddRange(new object[] {

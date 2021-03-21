@@ -13,6 +13,9 @@ namespace Proyecto_Registro.Entidades
         [Key]
         public int PermisoId { get; set; }
         public string DetallePermiso { get; set; }
+        public string Nombre { get; set; }
+        public bool vecesAcignada { get; set; }
+
 
         [ForeignKey("PermisosId")]
         public virtual Permisos permisos { get; set; }

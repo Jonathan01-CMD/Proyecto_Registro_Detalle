@@ -21,6 +21,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="UI\MainForm.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -32,12 +35,6 @@
 
   <ItemGroup>
     <Folder Include="DATA\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="DATA\ReguistoCompleto.Db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

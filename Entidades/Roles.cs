@@ -16,6 +16,8 @@ namespace Proyecto_Registro.Entidades
         public string Descripcion { get; set; }
         public bool esActivo { get; set; }
 
+        public DateTime FechaCreacion { get; set; }
+
         [ForeignKey("RolID")]
         public virtual List<RolesDetalles> Detalles { get; set; }
         
@@ -24,6 +26,7 @@ namespace Proyecto_Registro.Entidades
             RolID = 0;
             Descripcion = string.Empty;
             esActivo = false;
+            FechaCreacion = DateTime.Now;
             Detalles = new List<RolesDetalles>();
         }
     }

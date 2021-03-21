@@ -40,9 +40,9 @@ namespace Reguistro_Completo.UI.Consulta
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
             this.UsoCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ImprimirButton = new System.Windows.Forms.Button();
@@ -67,7 +67,7 @@ namespace Reguistro_Completo.UI.Consulta
             this.FiltroComboBox.FormattingEnabled = true;
             this.FiltroComboBox.Location = new System.Drawing.Point(43, 49);
             this.FiltroComboBox.Name = "FiltroComboBox";
-            this.FiltroComboBox.Size = new System.Drawing.Size(121, 23);
+            this.FiltroComboBox.Size = new System.Drawing.Size(119, 23);
             this.FiltroComboBox.TabIndex = 2;
             // 
             // groupBox1
@@ -80,7 +80,7 @@ namespace Reguistro_Completo.UI.Consulta
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(168, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(307, 43);
+            this.groupBox1.Size = new System.Drawing.Size(305, 43);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
@@ -125,7 +125,7 @@ namespace Reguistro_Completo.UI.Consulta
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DescripcionTextBox.Location = new System.Drawing.Point(168, 49);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
-            this.DescripcionTextBox.Size = new System.Drawing.Size(307, 23);
+            this.DescripcionTextBox.Size = new System.Drawing.Size(305, 23);
             this.DescripcionTextBox.TabIndex = 4;
             // 
             // UsoCheckBox
@@ -147,10 +147,21 @@ namespace Reguistro_Completo.UI.Consulta
             this.groupBox2.Controls.Add(this.radioButton2);
             this.groupBox2.Location = new System.Drawing.Point(481, 1);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(95, 71);
+            this.groupBox2.Size = new System.Drawing.Size(93, 71);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "EsActivo?";
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 48);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(72, 19);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Inactivos";
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
@@ -174,17 +185,6 @@ namespace Reguistro_Completo.UI.Consulta
             this.radioButton2.Text = "Activos";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 48);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(72, 19);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Inactivos";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
             // BuscarButton
             // 
             this.BuscarButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -192,7 +192,7 @@ namespace Reguistro_Completo.UI.Consulta
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
             this.BuscarButton.Location = new System.Drawing.Point(582, 8);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(100, 64);
+            this.BuscarButton.Size = new System.Drawing.Size(98, 64);
             this.BuscarButton.TabIndex = 7;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -222,7 +222,7 @@ namespace Reguistro_Completo.UI.Consulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 336);
+            this.ClientSize = new System.Drawing.Size(686, 336);
             this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BuscarButton);

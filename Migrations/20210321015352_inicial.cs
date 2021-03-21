@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Proyecto_Registro.Migrations
 {
-    public partial class AgregandoPermisos : Migration
+    public partial class inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,6 +14,8 @@ namespace Proyecto_Registro.Migrations
                     PermisoId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     DetallePermiso = table.Column<string>(type: "TEXT", nullable: true),
+                    Nombre = table.Column<string>(type: "TEXT", nullable: true),
+                    vecesAcignada = table.Column<bool>(type: "INTEGER", nullable: false),
                     PermisosId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
@@ -34,11 +36,30 @@ namespace Proyecto_Registro.Migrations
                     RolID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Descripcion = table.Column<string>(type: "TEXT", nullable: true),
-                    esActivo = table.Column<bool>(type: "INTEGER", nullable: false)
+                    esActivo = table.Column<bool>(type: "INTEGER", nullable: false),
+                    FechaCreacion = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.RolID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Usuarios",
+                columns: table => new
+                {
+                    UsuarioID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Clave = table.Column<string>(type: "TEXT", nullable: true),
+                    Nombres = table.Column<string>(type: "TEXT", nullable: true),
+                    Email = table.Column<string>(type: "TEXT", nullable: true),
+                    FechaIngreso = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Alias = table.Column<string>(type: "TEXT", nullable: true),
+                    Activo = table.Column<bool>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuarios", x => x.UsuarioID);
                 });
 
             migrationBuilder.CreateTable(
@@ -62,45 +83,20 @@ namespace Proyecto_Registro.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Usuarios",
-                columns: table => new
-                {
-                    UsuarioID = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Clave = table.Column<string>(type: "TEXT", nullable: true),
-                    Nombres = table.Column<string>(type: "TEXT", nullable: true),
-                    Email = table.Column<string>(type: "TEXT", nullable: true),
-                    FechaIngreso = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    RolID = table.Column<int>(type: "INTEGER", nullable: false),
-                    Alias = table.Column<string>(type: "TEXT", nullable: true),
-                    Activo = table.Column<bool>(type: "INTEGER", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Usuarios", x => x.UsuarioID);
-                    table.ForeignKey(
-                        name: "FK_Usuarios_Roles_RolID",
-                        column: x => x.RolID,
-                        principalTable: "Roles",
-                        principalColumn: "RolID",
-                        onDelete: ReferentialAction.Cascade);
-                });
+            migrationBuilder.InsertData(
+                table: "Permisos",
+                columns: new[] { "PermisoId", "DetallePermiso", "Nombre", "PermisosId", "vecesAcignada" },
+                values: new object[] { 1, "Descuento", null, null, false });
 
             migrationBuilder.InsertData(
                 table: "Permisos",
-                columns: new[] { "PermisoId", "DetallePermiso", "PermisosId" },
-                values: new object[] { 1, "Descuento", null });
+                columns: new[] { "PermisoId", "DetallePermiso", "Nombre", "PermisosId", "vecesAcignada" },
+                values: new object[] { 2, "Venta", null, null, false });
 
             migrationBuilder.InsertData(
                 table: "Permisos",
-                columns: new[] { "PermisoId", "DetallePermiso", "PermisosId" },
-                values: new object[] { 2, "Venta", null });
-
-            migrationBuilder.InsertData(
-                table: "Permisos",
-                columns: new[] { "PermisoId", "DetallePermiso", "PermisosId" },
-                values: new object[] { 3, "Cobrar", null });
+                columns: new[] { "PermisoId", "DetallePermiso", "Nombre", "PermisosId", "vecesAcignada" },
+                values: new object[] { 3, "Cobrar", null, null, false });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Permisos_PermisosId",
@@ -110,11 +106,6 @@ namespace Proyecto_Registro.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_RolesDetalles_RolID",
                 table: "RolesDetalles",
-                column: "RolID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Usuarios_RolID",
-                table: "Usuarios",
                 column: "RolID");
         }
 
